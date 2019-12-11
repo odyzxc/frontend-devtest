@@ -1,0 +1,16 @@
+const VIDEO_ACTION_TYPE_PREFIX = 'VIDEOS_';
+
+export const actionTypes = {
+  ADD: `${VIDEO_ACTION_TYPE_PREFIX}ADD`,
+  REMOVE: `${VIDEO_ACTION_TYPE_PREFIX}REMOVE`
+};
+
+export const addVideo = video => ({
+  type: actionTypes.ADD,
+  payload: video
+});
+
+export const removeVideo = videoId => ({
+  type: actionTypes.REMOVE,
+  videoId
+});
