@@ -7,11 +7,11 @@ const initialState = {
 export const videosReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.ADD:
-      return { ...state, videos: [...state.videos, action.payload] };
+      return { ...state, allVideos: [...state.allVideos, action.payload] };
     case actionTypes.REMOVE:
       return {
         ...state,
-        videos: state.videos.filter(v => v.id !== action.videoId)
+        allVideos: state.allVideos.filter(v => v.id !== action.videoId)
       };
     default:
       return state;

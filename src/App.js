@@ -8,6 +8,7 @@ import "./App.css";
 
 import TopLevelMenuBar from './components/TopLevelMenuBar';
 import SecondaryMenuBar from './components/SecondaryMenuBar';
+import GlobalToast from './GlobalToast';
 
 import Main from './views/main/Main'
 import Videos from './views/videos/Videos'
@@ -26,7 +27,7 @@ const App = () => (
         </Route>
       </Switch>
     </Router>
-
+    <GlobalToast/>
   </div>
 );
 

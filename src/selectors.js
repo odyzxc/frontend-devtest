@@ -1,0 +1,1 @@
+export const getToastState = state => state.toast;
