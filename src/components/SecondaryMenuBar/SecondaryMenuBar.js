@@ -3,7 +3,7 @@ import { Navbar, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const SecondaryMenuBar = () => (
-  <Navbar bg="secondary" variant="dark">
+  <Navbar bg="light" variant="dark">
     <NavDropdown title="Videos" id="basic-nav-dropdown">
       <NavDropdown.Item as={Link} to="/videos/new">
         Add new

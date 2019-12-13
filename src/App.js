@@ -2,6 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 import { ConnectedRouter } from "connected-react-router";
+import uuid from "uuid";
 
 import "./App.css";
 
@@ -27,9 +28,11 @@ const generateTestData = numberOfEntries => {
     "is there imagination API somewhere?"
   ];
   return new Array(numberOfEntries).fill().map((e, i) => ({
-    id: i,
+    id: uuid.v4(),
     title: `${titles[randomFromRange(0, titles.length - 1)]} ${i + 1}`,
-    description: `${descriptions[randomFromRange(0, descriptions.length - 1)]} ${i + 1}`,
+    description: `${
+      descriptions[randomFromRange(0, descriptions.length - 1)]
+    } ${i + 1}`,
     videoSnapshotThumbnailUrl: `https://picsum.photos/id/${i}/200/300`,
     videoSnapshotUrl: `https://picsum.photos/id/${i}/400/600`
   }));

@@ -16,6 +16,9 @@ export const strings = {
   deleteDialog: {
     title: 'Confirmation required',
     message: 'Are you absolutely sure you want to delete the video info?'
+  },
+  pagination: {
+    pageSize: "Page size: "
   }
 };
 
