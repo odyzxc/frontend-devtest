@@ -15,46 +15,29 @@ import GlobalToast from "./GlobalToast";
 import Main from "./views/main/Main";
 import Videos from "./views/videos/Videos";
 
+const randomFromRange = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+
+const generateTestData = numberOfEntries => {
+  const titles = ["Rambo", "Cute cat video", "pr0n", "Another awesome title"];
+  const descriptions = [
+    "a nice description",
+    "another description",
+    "my imagination sucks",
+    "is there imagination API somewhere?"
+  ];
+  return new Array(numberOfEntries).fill().map((e, i) => ({
+    id: i,
+    title: `${titles[randomFromRange(0, titles.length - 1)]} ${i + 1}`,
+    description: `${descriptions[randomFromRange(0, descriptions.length - 1)]} ${i + 1}`,
+    videoSnapshotThumbnailUrl: `https://picsum.photos/id/${i}/200/300`,
+    videoSnapshotUrl: `https://picsum.photos/id/${i}/400/600`
+  }));
+};
+
 const testInitialState = {
   videos: {
-    allVideos: [
-      {
-        id: "1",
-        title: "title 1",
-        description: "desc",
-        videoSnapshotThumbnailUrl:
-          "http://www.onehd.pl/wp-content/themes/radial/images/placeholder-580-video.png",
-        videoSnapshotUrl:
-          "http://www.onehd.pl/wp-content/themes/radial/images/placeholder-580-video.png"
-      },
-      {
-        id: "2",
-        title: "title 2",
-        description: "desc",
-        videoSnapshotThumbnailUrl:
-          "http://www.onehd.pl/wp-content/themes/radial/images/placeholder-580-video.png",
-        videoSnapshotUrl:
-          "http://www.onehd.pl/wp-content/themes/radial/images/placeholder-580-video.png"
-      },
-      {
-        id: "3",
-        title: "title 3",
-        description: "desc",
-        videoSnapshotThumbnailUrl:
-          "http://www.onehd.pl/wp-content/themes/radial/images/placeholder-580-video.png",
-        videoSnapshotUrl:
-          "http://www.onehd.pl/wp-content/themes/radial/images/placeholder-580-video.png"
-      },
-      {
-        id: "4",
-        title: "title 4",
-        description: "desc",
-        videoSnapshotThumbnailUrl:
-          "http://www.onehd.pl/wp-content/themes/radial/images/placeholder-580-video.png",
-        videoSnapshotUrl:
-          "http://www.onehd.pl/wp-content/themes/radial/images/placeholder-580-video.png"
-      }
-    ]
+    allVideos: generateTestData(9)
   }
 };
 
