@@ -1,10 +1,11 @@
 import { combineReducers } from "redux";
+import {connectRouter} from 'connected-react-router';
+
 import { videosReducer as videos } from "../views/videos/reducer";
 import { toastReducer as toast } from '../reducer';
 
-const rootReducer = combineReducers({
+export const createRootReducer = history => combineReducers({
+  router: connectRouter(history),
   toast,
   videos
 });
-
-export default rootReducer;

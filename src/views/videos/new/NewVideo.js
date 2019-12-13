@@ -6,6 +6,7 @@ import uuid from "uuid";
 import VideoForm from "../VideoForm";
 import { showToast } from "../../../actions";
 import { strings } from "../../../constants";
+import { addVideo } from "../actions";
 
 const NewVideo = () => {
   const dispatch = useDispatch();
@@ -18,8 +19,8 @@ const NewVideo = () => {
             onSubmitSuccess={() =>
               dispatch(
                 showToast({
-                  message: "Successfuly added new video",
-                  title: "Success!"
+                  message: strings.successMessage.addedNewVideo,
+                  title: strings.successMessage.title
                 })
               )
             }
@@ -30,6 +31,7 @@ const NewVideo = () => {
               videoSnapshotUrl: "",
               description: ""
             }}
+            submitAction={addVideo}
           />
         </Col>
       </Row>

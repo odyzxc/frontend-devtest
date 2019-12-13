@@ -4,7 +4,6 @@ import { Button, Form } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-import { addVideo } from "./actions";
 import { strings } from "../../constants";
 
 const Input = ({ errors, touched, formik, formKey, name }) => (
@@ -24,15 +23,15 @@ const Input = ({ errors, touched, formik, formKey, name }) => (
   </Form.Group>
 );
 
-const VideoForm = ({ onSubmitSuccess, initialValues }) => {
+const VideoForm = ({ onSubmitSuccess, initialValues, submitAction }) => {
   const dispatch = useDispatch();
 
   const formik = useFormik({
     initialValues: initialValues,
     onSubmit: (values, { resetForm }) => {
-      dispatch(addVideo(values));
-      onSubmitSuccess();
+      dispatch(submitAction(values));
       resetForm();
+      onSubmitSuccess();
     },
     validationSchema: Yup.object().shape({
       title: Yup.string().required(strings.errorMessage.required),
