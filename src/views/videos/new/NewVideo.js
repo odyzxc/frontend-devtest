@@ -3,10 +3,10 @@ import { useDispatch } from "react-redux";
 import { Container, Row, Col } from "react-bootstrap";
 import uuid from "uuid";
 
-import VideoForm from "../VideoForm";
-import { showToast } from "../../../actions";
-import { strings } from "../../../constants";
-import { addVideo } from "../actions";
+import VideoForm from "views/videos/VideoForm";
+import { showToast } from "actions";
+import { strings } from "common/constants";
+import { addVideo } from "views/videos/actions";
 
 const NewVideo = () => {
   const dispatch = useDispatch();

@@ -1,10 +1,10 @@
 import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 
-import VideoDetails from "./VideoDetails";
-import VideosList from "./VideosList";
-import NewVideo from "./new/NewVideo";
-import EditVideo from "./edit/EditVideo";
+import VideoDetails from "views/videos/VideoDetails";
+import VideosList from "views/videos/VideosList";
+import NewVideo from "views/videos/new/NewVideo";
+import EditVideo from "views/videos/edit/EditVideo";
 
 const Videos = () => {
   const match = useRouteMatch();

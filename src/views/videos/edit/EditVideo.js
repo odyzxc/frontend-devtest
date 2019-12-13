@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { Container, Row, Col } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
-import VideoForm from "../VideoForm";
-import { showToast } from "../../../actions";
-import { editVideo } from "../actions";
-import { strings } from "../../../constants";
-import { getVideo } from "../selectors";
+import VideoForm from "views/videos/VideoForm";
+import { showToast } from "actions";
+import { editVideo } from "views/videos/actions";
+import { strings } from "common/constants";
+import { getVideo } from "views/videos/selectors";
 
 const EditVideo = ({ history }) => {
   const { videoId } = useParams();

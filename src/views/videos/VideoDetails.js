@@ -4,7 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import { Image, Button } from "react-bootstrap";
 
 import { getVideo } from "./selectors";
-import { strings } from "../../constants";
+import { strings } from "common/constants";
 
 const VideoDetails = () => {
   const { videoId } = useParams();

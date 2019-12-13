@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Image } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
-import { getAllVideos } from "./selectors";
+import { getAllVideos } from "views/videos/selectors";
 
 const VideosList = () => {
   const allVideos = useSelector(getAllVideos);

@@ -4,7 +4,7 @@ import { Button, Form } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-import { strings } from "../../constants";
+import { strings } from "common/constants";
 
 const Input = ({ errors, touched, formik, formKey, name }) => (
   <Form.Group>
