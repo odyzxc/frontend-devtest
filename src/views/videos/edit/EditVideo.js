@@ -34,7 +34,7 @@ const EditVideo = ({ history }) => {
               history.push("/videos/");
             }}
             initialValues={videoInfo}
-            submitAction={editVideo}
+            onSubmit={values => dispatch(editVideo(values))}
           />
         </Col>
       </Row>

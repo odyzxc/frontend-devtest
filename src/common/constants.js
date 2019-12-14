@@ -22,4 +22,4 @@ export const strings = {
   }
 };
 
-export const pageSizeOptions = [2, 4, 6, 10];
+export const pageSizeOptions = [4, 8, 16, 32];
