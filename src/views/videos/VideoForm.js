@@ -1,5 +1,4 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import { Button, Form } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -23,15 +22,13 @@ const Input = ({ errors, touched, formik, formKey, name }) => (
   </Form.Group>
 );
 
-const VideoForm = ({ onSubmitSuccess, initialValues, submitAction }) => {
-  const dispatch = useDispatch();
-
+const VideoForm = ({ onSubmitSuccess, initialValues, onSubmit }) => {
   const formik = useFormik({
     initialValues: initialValues,
     onSubmit: (values, { resetForm }) => {
-      dispatch(submitAction(values));
+      onSubmit(values);
       resetForm();
-      onSubmitSuccess();
+      onSubmitSuccess(); // disclaimer - in a production grade app I would use some async action middleware (eg. redux-observable or redux-thunk) and fire this after receiving 200 OK after sending form data to backend
     },
     validationSchema: Yup.object().shape({
       title: Yup.string().required(strings.errorMessage.required),

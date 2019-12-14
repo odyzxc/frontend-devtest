@@ -31,7 +31,7 @@ const NewVideo = () => {
               videoSnapshotUrl: "",
               description: ""
             }}
-            submitAction={addVideo}
+            onSubmit={values => dispatch(addVideo(values))}
           />
         </Col>
       </Row>
